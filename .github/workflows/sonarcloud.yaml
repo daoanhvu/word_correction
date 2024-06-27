@@ -1,0 +1,26 @@
+name: sonarcloud analysis
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read
+
+jobs:
+  Analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Analysis with SonarCloud
+
+        uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
+        env:
+          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+        with:
+          args:
+            -Dsonar.projectKey=daoanhvu_word_correction
+            -Dsonar.organization=daoanhvuorg
