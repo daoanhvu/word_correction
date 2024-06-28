@@ -8,4 +8,7 @@ For version of dependencies, please refer to the file requirements.txt.
 git clone github.com:daoanhvu/word_correction.git
 
 ## Run the program
-python main.py
+### On Linux Or MacOS
+streamlit run main.py
+### On Windows
+python -m streamlit run main.py
